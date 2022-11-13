@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="307ad549-1c69-41c4-bf4e-a3a0dfd76306" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/HebdoWinV2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/function/getData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/function/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/function/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/function/updateData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/_button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/reset/_reset.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/responsive/_general.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/responsive/_laptop.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/responsive/_mobile.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/variable&amp;autre/_function.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/variable&amp;autre/_keyframes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/variable&amp;autre/_mixin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/variable&amp;autre/_property.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/variable&amp;autre/_variable.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/font/ACE_RECORDS.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/font/ARDESTINE.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/font/BLOX2.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icon/trophy-solid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/background.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/info.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0" />
+  <component name="ProjectId" id="2HG4ovu20ZPZRP7u1nSGFUbXaQh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "C:/laragon/www/HebdoWin/hebdowin_test",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.toDoOptions",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\HebdoWin\HebdoWinV2" />
+      <recent name="C:\laragon\www\HebdoWin\HebdoWinV2\config" />
+      <recent name="C:\laragon\www\HebdoWin\HebdoWinV2\css\responsive" />
+      <recent name="C:\laragon\www\HebdoWin\HebdoWinV2\css" />
+      <recent name="C:\laragon\www\HebdoWin\HebdoWinV2\icon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\HebdoWin\HebdoWinV2\view" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="307ad549-1c69-41c4-bf4e-a3a0dfd76306" name="Changes" comment="" />
+      <created>1667898265242</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668336469564</updated>
+      <workItem from="1667898266688" duration="2733000" />
+      <workItem from="1667927540858" duration="9682000" />
+      <workItem from="1667988438290" duration="10995000" />
+      <workItem from="1668003486393" duration="1313000" />
+      <workItem from="1668333683640" duration="2759000" />
+      <workItem from="1668336470127" duration="13918000" />
+      <workItem from="1668367999878" duration="5745000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <option name="createChangelist" value="false" />
+    <option name="createBranch" value="false" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/hebdowinV2" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/script/testCookie.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
