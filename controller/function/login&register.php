@@ -42,13 +42,13 @@ function login(){
 	foreach ($verifPseudo as $data){
 		$pseudo = $data['pseudo'];
 		$idUser = $data['idUser'];
+		if($pseudoLogin === $pseudo){
+			$success = 1;
+			//Edit add cookie userId
+		}else{
+			$success = 0;
+		}
 	}
-	if($pseudoLogin === $pseudo){
-		$success = 1;
-	}else{
-		$success = 0;
-	}
-	
-	$res =["sucLog" =>$success];
+	$res =["sucLog" =>$success]];
 	echo json_encode($res);
 }

@@ -8,3 +8,4 @@ function getCookie(name){
   }
   return decodeURIComponent(value)
 }
+

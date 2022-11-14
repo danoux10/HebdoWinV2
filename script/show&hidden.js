@@ -57,9 +57,9 @@ closeRegister.addEventListener('click',closeRegisterForm);
 
 //link affect class on info
 
-// infoMain.classList.add('hidden');
+infoMain.classList.add('hidden');
 
 
 //Remove
-header.classList.add('hidden');
-formHome.classList.add('hidden');
+// header.classList.add('hidden');
+// formHome.classList.add('hidden');
