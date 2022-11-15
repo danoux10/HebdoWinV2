@@ -3,7 +3,7 @@ const viewResponse = document.getElementById('response-form');
 const header = document.getElementById('header-content');
 const formHome = document.getElementById('form-login-and-register');
 const infoMain = document.getElementById('info');
-const infoForm = document.getElementById('info-form');
+
 //sublink bloc form
 const login = document.getElementById('login');
 const register = document.getElementById('register');
