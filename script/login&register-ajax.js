@@ -62,3 +62,27 @@ function loginAjax(event) {
 }
 
 login.addEventListener('submit', loginAjax);
+
+function deconnexionAjax(event){
+  event.preventDefault();
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'controller/function/login&register.php?task=deconnexion');
+  var data = new FormData(this);
+  xhr.send(data);
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4 && xhr.status == 200){
+      console.log(this.responseText);
+      var response = JSON.parse(this.response);
+      if(response.sucDec == 1){
+        header.classList.remove('hidden');
+        formHome.classList.remove('hidden');
+        infoMain.classList.add('hidden');
+      }
+    }else if (xhr.readyState ==4){
+      alert('error deconnexion');
+    }
+  }
+  return false;
+}
+
+deconnexion.addEventListener('submit',deconnexionAjax);

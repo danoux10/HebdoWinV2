@@ -10,9 +10,6 @@ const healIncForm = document.getElementById('healInc');
 
 const resetAllForm = document.getElementById('resetAll');
 
-//Remove
-getData();
-
 //link function for form
 //sublink tank dec form
 function tankDec(event){
@@ -24,7 +21,6 @@ function tankDec(event){
   xhr.onreadystatechange = function(){
     if (xhr.readyState == 4 && xhr.status == 200){
       var response = JSON.stringify(this.response);
-      console.log(response);
       getData();
     }else if (xhr.readyState == 4){
       alert('error tank dec');
@@ -42,7 +38,6 @@ function tankInc(event){
   xhr.onreadystatechange = function(){
     if (xhr.readyState == 4 && xhr.status == 200){
       var response = JSON.stringify(this.response);
-      console.log(response);
       getData();
     }else if (xhr.readyState == 4){
       alert('error tank inc');
@@ -61,7 +56,6 @@ function dpsDec(event){
   xhr.onreadystatechange = function(){
     if (xhr.readyState == 4 && xhr.status == 200){
       var response = JSON.stringify(this.response);
-      console.log(response);
       getData();
     }else if (xhr.readyState == 4){
       alert('error dps dec');
@@ -79,7 +73,6 @@ function dpsInc(event){
   xhr.onreadystatechange = function(){
     if (xhr.readyState == 4 && xhr.status == 200){
       var response = JSON.stringify(this.response);
-      console.log(response);
       getData();
     }else if (xhr.readyState == 4){
       alert('error dps inc');
@@ -98,7 +91,6 @@ function healDec(event){
   xhr.onreadystatechange = function(){
     if (xhr.readyState == 4 && xhr.status == 200){
       var response = JSON.stringify(this.response);
-      console.log(response);
       getData();
     }else if (xhr.readyState == 4){
       alert('error heal dec');
@@ -116,7 +108,6 @@ function healInc(event){
   xhr.onreadystatechange = function(){
     if (xhr.readyState == 4 && xhr.status == 200){
       var response = JSON.stringify(this.response);
-      console.log(response);
       getData();
     }else if (xhr.readyState == 4){
       alert('error heal inc');
@@ -135,7 +126,6 @@ function resetAll(event){
   xhr.onreadystatechange = function(){
     if (xhr.readyState == 4 && xhr.status == 200){
       var response = JSON.stringify(this.response);
-      console.log(response);
       getData();
     }else if (xhr.readyState == 4){
       alert('error reset');

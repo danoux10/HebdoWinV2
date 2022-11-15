@@ -15,7 +15,6 @@ function getData(){
   xhr.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       var response = JSON.parse(xhr.response);
-      // console.log(response);
 
       username.innerHTML = response.pseudo;
       tankView.innerHTML = response.tank;

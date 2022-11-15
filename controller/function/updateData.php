@@ -40,7 +40,7 @@ function tankDec(){
 	$data--;
 	$update = $bdd->prepare('UPDATE player set tankData=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$data,1]);
+	$update->execute([$data,$_COOKIE['idUser']]);
 }
 function tankInc(){
 	global $bdd;
@@ -48,7 +48,7 @@ function tankInc(){
 	$data++;
 	$update = $bdd->prepare('UPDATE player set tankData=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$data,1]);
+	$update->execute([$data,$_COOKIE['idUser']]);
 }
 //sublink dps
 function dpsDec(){
@@ -57,7 +57,7 @@ function dpsDec(){
 	$data--;
 	$update = $bdd->prepare('UPDATE player set dpsData=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$data,1]);
+	$update->execute([$data,$_COOKIE['idUser']]);
 }
 function dpsInc(){
 	global $bdd;
@@ -65,7 +65,7 @@ function dpsInc(){
 	$data++;
 	$update = $bdd->prepare('UPDATE player set dpsData=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$data,1]);
+	$update->execute([$data,$_COOKIE['idUser']]);
 }
 //sublink heal
 function healDec(){
@@ -74,7 +74,7 @@ function healDec(){
 	$data--;
 	$update = $bdd->prepare('UPDATE player set healData=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$data,1]);
+	$update->execute([$data,$_COOKIE['idUser']]);
 }
 function healInc(){
 	global $bdd;
@@ -82,7 +82,7 @@ function healInc(){
 	$data++;
 	$update = $bdd->prepare('UPDATE player set healData=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$data,1]);
+	$update->execute([$data,$_COOKIE['idUser']]);
 }
 //sublink reset
 function resetAll(){
@@ -92,5 +92,5 @@ function resetAll(){
 	$heal = 0;
 	$update = $bdd->prepare('UPDATE player set tankData=?,dpsData=?,healData=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$tank,$dps,$heal,1]);
+	$update->execute([$tank,$dps,$heal,$_COOKIE['idUser']]);
 }

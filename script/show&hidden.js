@@ -2,10 +2,12 @@
 const viewResponse = document.getElementById('response-form');
 const header = document.getElementById('header-content');
 const formHome = document.getElementById('form-login-and-register');
-const register = document.getElementById('register');
-const login = document.getElementById('login');
 const infoMain = document.getElementById('info');
 const infoForm = document.getElementById('info-form');
+//sublink bloc form
+const login = document.getElementById('login');
+const register = document.getElementById('register');
+const deconnexion = document.getElementById('deconnexion');
 
 //link declaration btn
 const showLogin = document.getElementById('login-btn');
@@ -13,6 +15,7 @@ const showRegister = document.getElementById('register-btn');
 
 const closeLogin = document.getElementById('login-close');
 const closeRegister = document.getElementById('register-close');
+
 
 //link affect class on login & register
 login.classList.add('hidden');
@@ -56,10 +59,5 @@ showRegister.addEventListener('click',showRegisterForm);
 closeRegister.addEventListener('click',closeRegisterForm);
 
 //link affect class on info
-
 infoMain.classList.add('hidden');
 
-
-//Remove
-// header.classList.add('hidden');
-// formHome.classList.add('hidden');

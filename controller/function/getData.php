@@ -3,7 +3,7 @@ include_once '../../config/database.php';
 
 $allData = $bdd->prepare('SELECT * FROM player WHERE idUser=?');
 //Update change value by cookie
-$allData->execute([1]);
+$allData->execute([$_COOKIE['idUser']]);
 foreach ($allData as $data){
 	$pseudo = $data['pseudo'];
 	$tank = $data['tankData'];

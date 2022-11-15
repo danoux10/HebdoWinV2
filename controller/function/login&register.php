@@ -13,6 +13,10 @@ if($task == 'login'){
 	 login();
  }
 
+if($task == 'deconnexion'){
+	deconnexion();
+}
+
 function register(){
 	global $bdd;
 	$verifRegister = null;
@@ -42,13 +46,21 @@ function login(){
 	foreach ($verifPseudo as $data){
 		$pseudo = $data['pseudo'];
 		$idUser = $data['idUser'];
-		if($pseudoLogin === $pseudo){
-			$success = 1;
-			//Edit add cookie userId
-		}else{
-			$success = 0;
-		}
 	}
-	$res =["sucLog" =>$success]];
+	if($pseudoLogin === $pseudo){
+		$success = 1;
+		//Edit add cookie userId
+		setcookie('idUser',$idUser,time()+(20*365*24*60*60),'/');
+	}else{
+		$success = 0;
+	}
+	$res =["sucLog" =>$success];
 	echo json_encode($res);
+}
+
+function deconnexion(){
+	$success = 1;
+	setcookie('idUser',null,time()*(20*365*24*60*60),'/');
+	$rep =["sucDec"=>$success];
+	echo json_encode($rep);
 }
