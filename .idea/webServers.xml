@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="452c8f24-1c90-4464-91cc-b2a90ee3c59e" name="hebdoWinV2" url="http://192.168.1.39">
+        <fileTransfer rootFolder="/HebdowinV2" host="192.168.1.39" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

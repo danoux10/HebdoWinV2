@@ -1,0 +1,45 @@
+//link all btn
+.btn{
+  cursor: pointer;
+}
+//link close btn
+.btn-close{
+  transition:all ease .5s;
+  &:hover{
+    filter: invert(1);
+  }
+}
+//link btn exepted close
+.btn:not(.btn-close){
+  color:$dark;
+  padding: .2rem;
+  border-radius: 10px;
+  font-size:large;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-color: $dark;
+  &:hover{
+    @include shadow($medium);
+    border: 1px solid $light;
+    background: none;
+  }
+  p{
+    font-weight: bolder;
+  }
+}
+
+.btn-login{
+  background: $login;
+  @include shadow($login);
+  &:hover{
+    color: $login;
+  }
+}
+
+.btn-register{
+  background: $register;
+  @include shadow($register);
+  &:hover{
+    color: $register;
+  }
+}
