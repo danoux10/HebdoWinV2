@@ -1,0 +1,39 @@
+<!--link login & register content-->
+<div id="form-login-and-register" class="form-content">
+	<!--sublink login content-->
+	<!--Edit add action for login-->
+	<form action="controller/function/login&register.php?task=login" method="post" id="login">
+		<fieldset class="form-home">
+			<legend>Connexion</legend>
+			<div class="btn-close" id="login-close">
+				<span></span>
+				<span></span>
+			</div>
+			<span class="form-containt">
+				<label for="login-pseudo">Pseudo :</label>
+				<!--Edit add required-->
+				<input type="text" id="login-pseudo" name="data-login" placeholder="Pseudo">
+			</span>
+			<p class="message">Attention pseudo sensible aux Majuscules</p>
+			<button type="submit" class="btn btn-valid">Se Connecter</button>
+		</fieldset>
+	</form>
+	<!--sublink register content-->
+	<!--Edit add action for register-->
+	<form action="controller/function/login&register.php?task=register" method="post" id="register">
+		<fieldset class="form-home">
+			<legend>Inscription</legend>
+			<div class="btn-close" id="register-close">
+				<span></span>
+				<span></span>
+			</div>
+			<span class="form-containt">
+				<label for="register-pseudo">Pseudo :</label>
+				<!--Edit add required-->
+				<input type="text" id="register-pseudo" name="data-register" placeholder="Pseudo">
+			</span>
+			<p class="message">Attention pseudo sensible aux Majuscules</p>
+			<button type="submit" class="btn btn-valid">S'inscrire</button>
+		</fieldset>
+	</form>
+</div>

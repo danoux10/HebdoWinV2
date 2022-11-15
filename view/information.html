@@ -1,0 +1,82 @@
+<main id="info">
+	<form action="controller/function/login&register.php?task=deconnexion" method="post" id="deconnexion">
+		<button type="submit">Deconnexion</button>
+	</form>
+	<h1>Info</h1>
+	<h2 id="view-cookie"></h2>
+	<div id="info-view">
+		<h2>info view</h2>
+		<div style="display: flex; justify-content: space-around;">
+			<span style="display: flex">
+				<p>username : </p>
+				<p id="username"></p>
+			</span>
+			<span style="display: flex">
+				<p>tank : </p>
+				<p id="tank-value"></p>
+			</span>
+			<span style="display: flex">
+				<p>dps : </p>
+				<p id="dps-value"></p>
+			</span>
+			<span style="display: flex">
+				<p>heal : </p>
+				<p id="heal-value"></p>
+			</span>
+		</div>
+	</div>
+
+	<!--link info form content-->
+	<div id="info-form">
+		<h2>info hidden</h2>
+		<!--sublink tank form content-->
+		<div>
+			<p>tank</p>
+			<!--anchor tank decrement-->
+			<form action="controller/function/updateData.php?task=tankDec" method="post" id="tankDec">
+				<input type="text" value="" name="dataTank">
+				<input type="submit" value="Decrement" id="tank-decrement">
+			</form>
+			<!--anchor tank increment-->
+			<form action="controller/function/updateData.php?task=tankInc" method="post" id="tankInc">
+				<input type="text" value="" name="dataTank">
+				<input type="submit" value="Increment" id="tank-increment">
+			</form>
+		</div>
+		<!--sublink dps form content-->
+		<div>
+			<p>dps</p>
+			<!--anchor dps decrement-->
+			<form action="controller/function/updateData.php?task=dpsDec" method="post" id="dpsDec">
+				<input type="text" value="" name="dataDps">
+				<input type="submit" value="Decrement" id="dps-decrement">
+			</form>
+			<!--anchor dps increment-->
+			<form action="controller/function/updateData.php?task=dpsInc" method="post" id="dpsInc">
+				<input type="text" value="" name="dataDps">
+				<input type="submit" value="Increment" id="dps-increment">
+			</form>
+		</div>
+		<!--sublink heal form content-->
+		<div>
+			<p>heal</p>
+			<!--anchor dps decrement-->
+			<form action="controller/function/updateData.php?task=healDec" method="post" id="healDec">
+				<input type="text" value="" name="dataHeal">
+				<input type="submit" value="Decrement" id="heal-decrement">
+			</form>
+			<!--anchor dps increment-->
+			<form action="controller/function/updateData.php?task=healInc" method="post" id="healInc">
+				<input type="text" value="" name="dataHeal">
+				<input type="submit" value="Increment" id="heal-increment">
+			</form>
+		</div>
+		<!--sublink reset form content-->
+		<div>
+			<p>reset</p>
+			<form action="controller/function/updateData.php?task=resetAll" method="post" id="resetAll">
+				<input type="submit" value="reset" id="reset-btn">
+			</form>
+		</div>
+	</div>
+</main>
