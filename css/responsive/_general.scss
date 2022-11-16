@@ -167,6 +167,13 @@
 #info {
   position: absolute;
   width: 99%;
+  transform:none;
+  transition:scale ease .5s;
+  &.hidden{
+    width:0;
+    height:0;
+    transform: scale(0);
+  }
   //sublink deconnexion
   #deconnexion {
     position: absolute;

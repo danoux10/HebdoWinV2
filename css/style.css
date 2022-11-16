@@ -13,6 +13,7 @@ button {
 input[type=text] {
   background: none;
   border: none;
+  color: white;
 }
 
 fieldset {
@@ -327,6 +328,13 @@ body {
 #info {
   position: absolute;
   width: 99%;
+  transform: none;
+  transition: scale ease 0.5s;
+}
+#info.hidden {
+  width: 0;
+  height: 0;
+  transform: scale(0);
 }
 #info #deconnexion {
   position: absolute;
