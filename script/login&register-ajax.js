@@ -1,6 +1,3 @@
-const loginInput = document.getElementById('login-pseudo');
-const registerInput = document.getElementById('register-pseudo');
-
 //link register
 function registerAjax(event) {
   event.preventDefault();
@@ -13,17 +10,19 @@ function registerAjax(event) {
       var response = JSON.parse(this.response);
       //sublink register error
       if (response.sucReg == 0) {
-        viewResponse.classList.add('error');
-        viewResponse.classList.remove('success');
-        viewResponse.innerHTML = 'Pseudo Déjà existant';
+        showResponse();
+        responseContent.classList.add('error');
+        responseContent.classList.remove('success');
+        responseForm.innerHTML = 'Pseudo Déjà existant';
       }
       //sublink register success
       if(response.sucReg == 1) {
-        viewResponse.classList.add('success');
-        viewResponse.classList.remove('error');
-        viewResponse.innerHTML = 'Pseudo Ajouter avec success';
+        showResponse();
+        responseContent.classList.add('success');
+        responseContent.classList.remove('error');
+        responseForm.innerHTML = 'Pseudo Ajouter avec success';
         registerInput.value = '';
-        register.classList.add('hidden');
+        closeRegister();
       }
     } else if (xhr.readyState == 4) {
       alert('error register');
@@ -32,7 +31,7 @@ function registerAjax(event) {
   return false;
 }
 
-register.addEventListener('submit', registerAjax);
+registerForm.addEventListener('submit', registerAjax);
 
 //link login
 function loginAjax(event) {
@@ -46,20 +45,19 @@ function loginAjax(event) {
       var response = JSON.parse(this.response);
       //sublink login error
       if(response.sucLog == 0){
-        viewResponse.classList.add('error');
-        viewResponse.classList.remove('success');
-        viewResponse.innerHTML = 'Pseudo Incorrect';
+        showResponse();
+        responseContent.classList.add('error');
+        responseContent.classList.remove('success');
+        responseForm.innerHTML = 'Pseudo Incorrect';
       }
       //sublink login success
       if (response.sucLog == 1){
-        //Edit add class hidden on header & formContent & remove show
-        header.classList.add('hidden');
-        formHome.classList.add('hidden');
-        //Edit remove class hidden on info & add class show
+        headerContent.classList.add('hidden');
+        registerForm.classList.add('hidden');
         getData();
         loginInput.value = '';
-        login.classList.add('hidden');
-        infoMain.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        info.classList.remove('hidden');
       }
     } else if (xhr.readyState == 4) {
       alert('error login');
@@ -68,7 +66,7 @@ function loginAjax(event) {
   return false;
 }
 
-login.addEventListener('submit', loginAjax);
+loginForm.addEventListener('submit', loginAjax);
 
 function deconnexionAjax(event){
   event.preventDefault();
@@ -81,9 +79,8 @@ function deconnexionAjax(event){
       console.log(this.responseText);
       var response = JSON.parse(this.response);
       if(response.sucDec == 1){
-        header.classList.remove('hidden');
-        formHome.classList.remove('hidden');
-        infoMain.classList.add('hidden');
+        headerContent.classList.remove('hidden');
+        info.classList.add('hidden');
       }
     }else if (xhr.readyState ==4){
       alert('error deconnexion');
