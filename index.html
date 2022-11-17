@@ -90,7 +90,6 @@
 </form>
 
 <!--link info-->
-<!--link info-->
 <main id="info">
 	<!--sublink logout-->
 	<form action="controller/function/login&register.php?task=deconnexion" id="deconnexion" method="post">
@@ -121,14 +120,14 @@
 				</span>
 				<fieldset class="tank">
 					<span>
-						<label class="btn btn-minus" for="tankDec">
+						<label class="btn btn-minus" for="tank-decrement">
 							<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 							<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 								<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
 							</svg>
 						</label>
 						<h3 id="tank-value"></h3>
-						<label class="btn btn-plus" for="tankInc">
+						<label class="btn btn-plus" for="tank-increment">
 							<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 							<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 								<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
@@ -150,14 +149,14 @@
 
 				<fieldset class="dps">
 					<span>
-						<label class="btn btn-minus" for="dpsDec">
+						<label class="btn btn-minus" for="dps-decrement">
 							<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 							<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 								<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
 							</svg>
 						</label>
 						<h3 id="dps-value"></h3>
-						<label class="btn btn-plus" for="dpsInc">
+						<label class="btn btn-plus" for="dps-increment">
 							<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 							<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 								<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
@@ -179,14 +178,14 @@
 
 				<fieldset class="heal">
 					<span>
-						<label class="btn btn-minus" for="healDec">
+						<label class="btn btn-minus" for="heal-decrement">
 							<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 							<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 								<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
 							</svg>
 						</label>
 						<h3 id="heal-value"></h3>
-						<label class="btn btn-plus" for="healInc">
+						<label class="btn btn-plus" for="heal-increment">
 							<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 							<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 								<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
@@ -210,7 +209,7 @@
 		<div id="confirm-popup">
 			<h4>Vous être sur de vouloir reset tout</h4>
 			<div class="btn-content">
-				<label class="btn btn-valid btn-valid-reset" for="resetData">
+				<label class="btn btn-valid btn-valid-reset" id="valid-reset" for="resetData">
 					<span>
 						<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 						<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">

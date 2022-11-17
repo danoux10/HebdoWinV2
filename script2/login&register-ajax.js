@@ -1,6 +1,3 @@
-const loginInput = document.getElementById('login-pseudo');
-const registerInput = document.getElementById('register-pseudo');
-
 //link register
 function registerAjax(event) {
   event.preventDefault();
@@ -25,7 +22,7 @@ function registerAjax(event) {
         responseContent.classList.remove('error');
         responseForm.innerHTML = 'Pseudo Ajouter avec success';
         registerInput.value = '';
-        register.classList.add('hidden');
+        closeRegister();
       }
     } else if (xhr.readyState == 4) {
       alert('error register');
@@ -55,10 +52,8 @@ function loginAjax(event) {
       }
       //sublink login success
       if (response.sucLog == 1){
-        //Edit add class hidden on header & formContent & remove show
         headerContent.classList.add('hidden');
         registerForm.classList.add('hidden');
-        //Edit remove class hidden on info & add class show
         getData();
         loginInput.value = '';
         loginForm.classList.add('hidden');

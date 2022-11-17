@@ -11,14 +11,12 @@ function getCookie(name) {
 
 
 if (getCookie('idUser') != null) {
-  header.classList.add('hidden');
-  formHome.classList.add('hidden');
+  headerContent.classList.add('hidden');
   getData();
-  infoMain.classList.remove('hidden');
+  info.classList.remove('hidden');
 }
 
 if(getCookie('idUser') == null){
-  header.classList.remove('hidden');
-  formHome.classList.remove('hidden');
-  infoMain.classList.add('hidden');
+  headerContent.classList.remove('hidden');
+  info.classList.add('hidden');
 }

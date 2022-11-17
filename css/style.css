@@ -217,7 +217,7 @@ body {
   font-weight: bolder;
   font-size: x-large;
 }
-#response .response-content #close-response {
+#response .response-content #response-close {
   width: 1.5rem;
   height: 1.5rem;
   display: flex;

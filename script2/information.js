@@ -1,15 +1,3 @@
-//link declaration form
-const tankDecForm = document.getElementById('tankDec');
-const tankIncForm = document.getElementById('tankInc');
-
-const dpsDecForm = document.getElementById('dpsDec');
-const dpsIncForm = document.getElementById('dpsInc');
-
-const healDecForm = document.getElementById('healDec');
-const healIncForm = document.getElementById('healInc');
-
-const resetAllForm = document.getElementById('resetAll');
-
 //link function for form
 //sublink tank dec form
 function tankDec(event){

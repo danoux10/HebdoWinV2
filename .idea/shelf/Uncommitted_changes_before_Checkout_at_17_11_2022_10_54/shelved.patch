@@ -1,0 +1,537 @@
+Index: script2/declaration.js
+===================================================================
+diff --git a/script2/declaration.js b/script2/declaration.js
+--- a/script2/declaration.js	
++++ b/script2/declaration.js	
+@@ -8,9 +8,27 @@
+ const loginForm = document.getElementById('login');
+ const registerForm = document.getElementById('register');
+ const deconnexion = document.getElementById('deconnexion');
++const tankDecForm = document.getElementById('tankDec');
++const tankInccForm = document.getElementById('tankInc');
++const dpsDecForm = document.getElementById('dpsDec');
++const dpsInccForm = document.getElementById('dpsInc');
++const healDecForm = document.getElementById('healDec');
++const healInccForm = document.getElementById('healInc');
++const resetDataForm = document.getElementById('resetAll');
+ 
+ //link view data
+ const responseForm = document.getElementById('response-form');
++const username = document.getElementById('username');
++const tankView = document.getElementById('tank-value');
++const dpsView = document.getElementById('dps-value');
++const healView = document.getElementById('heal-value');
++
++//link input data
++const loginInput = document.getElementById('login-input');
++const registerInput = document.getElementById('register-input');
++const tankValue = document.getElementsByName('dataTank');
++const dpsValue = document.getElementsByName('dataDps');
++const healValue = document.getElementsByName('dataHeal');
+ 
+ //link set btn
+ const showLoginBtn = document.getElementById('login-btn');
+@@ -19,4 +37,4 @@
+ const closeRegisterBtn = document.getElementById('register-close');
+ const closeResponseBtn = document.getElementById('response-close');
+ const resetBtn = document.getElementById('reset-btn');
+-const cancelBtn = document.getElementById('cancel-reset');
+\ No newline at end of file
++const cancelBtn = document.getElementById('cancel-reset');
+Index: script2/testCookie.js
+===================================================================
+diff --git a/script2/testCookie.js b/script2/testCookie.js
+--- a/script2/testCookie.js	
++++ b/script2/testCookie.js	
+@@ -1,24 +1,0 @@
+-function getCookie(name) {
+-  const cookie = document.cookie.split('; ');
+-  const value = cookie
+-      .find(c => c.startsWith(name))
+-      ?.split('=')[1];
+-  if (value === undefined) {
+-    return null;
+-  }
+-  return decodeURIComponent(value)
+-}
+-
+-
+-if (getCookie('idUser') != null) {
+-  header.classList.add('hidden');
+-  formHome.classList.add('hidden');
+-  getData();
+-  infoMain.classList.remove('hidden');
+-}
+-
+-if(getCookie('idUser') == null){
+-  header.classList.remove('hidden');
+-  formHome.classList.remove('hidden');
+-  infoMain.classList.add('hidden');
+-}
+\ No newline at end of file
+Index: script2/getData.js
+===================================================================
+diff --git a/script2/getData.js b/script2/getData.js
+--- a/script2/getData.js	
++++ b/script2/getData.js	
+@@ -1,33 +1,0 @@
+-const username = document.getElementById('username');
+-const tankView = document.getElementById('tank-value');
+-const dpsView = document.getElementById('dps-value');
+-const healView = document.getElementById('heal-value');
+-
+-const tankData = document.getElementsByName('dataTank');
+-const dpsData = document.getElementsByName('dataDps');
+-const healData = document.getElementsByName('dataHeal');
+-
+-
+-function getData(){
+-  var xhr = new XMLHttpRequest();
+-  xhr.open('GET','controller/function/getData.php');
+-  xhr.send();
+-  xhr.onreadystatechange = function(){
+-    if(this.readyState == 4 && this.status == 200){
+-      var response = JSON.parse(xhr.response);
+-
+-      username.innerHTML = response.pseudo;
+-      tankView.innerHTML = response.tank;
+-      dpsView.innerHTML = response.dps;
+-      healView.innerHTML = response.heal;
+-
+-      for(n=0;n<tankData.length;n++){
+-        tankData[n].value = response.tank;
+-        dpsData[n].value = response.dps;
+-        healData[n].value = response.heal;
+-      }
+-    }else if(this.readyState == 4 && this.status == 404){
+-      alert("error getData");
+-    }
+-  }
+-}
+\ No newline at end of file
+Index: script2/login&register-ajax.js
+===================================================================
+diff --git a/script2/login&register-ajax.js b/script2/login&register-ajax.js
+--- a/script2/login&register-ajax.js	
++++ b/script2/login&register-ajax.js	
+@@ -1,6 +1,3 @@
+-const loginInput = document.getElementById('login-pseudo');
+-const registerInput = document.getElementById('register-pseudo');
+-
+ //link register
+ function registerAjax(event) {
+   event.preventDefault();
+@@ -11,21 +8,11 @@
+   xhr.onreadystatechange = function () {
+     if (xhr.readyState == 4 && xhr.status == 200) {
+       var response = JSON.parse(this.response);
+-      //sublink register error
+-      if (response.sucReg == 0) {
+-        showResponse();
+-        responseContent.classList.add('error');
+-        responseContent.classList.remove('success');
+-        responseForm.innerHTML = 'Pseudo Déjà existant';
++      if(response.sucReg == 0){
++        errorRegister();
+       }
+-      //sublink register success
+-      if(response.sucReg == 1) {
+-        showResponse();
+-        responseContent.classList.add('success');
+-        responseContent.classList.remove('error');
+-        responseForm.innerHTML = 'Pseudo Ajouter avec success';
+-        registerInput.value = '';
+-        register.classList.add('hidden');
++      if(response.sucReg == 1){
++        successRegister();
+       }
+     } else if (xhr.readyState == 4) {
+       alert('error register');
+@@ -40,32 +27,14 @@
+ function loginAjax(event) {
+   event.preventDefault();
+   var xhr = new XMLHttpRequest();
+-  xhr.open('POST', 'controller/function/login&register.php?task=login');
++  xhr.open('POST', 'controller/function/login&register.php?task=');
+   var data = new FormData(this);
+   xhr.send(data);
+   xhr.onreadystatechange = function () {
+     if (xhr.readyState == 4 && xhr.status == 200) {
+       var response = JSON.parse(this.response);
+-      //sublink login error
+-      if(response.sucLog == 0){
+-        showResponse();
+-        responseContent.classList.add('error');
+-        responseContent.classList.remove('success');
+-        responseForm.innerHTML = 'Pseudo Incorrect';
+-      }
+-      //sublink login success
+-      if (response.sucLog == 1){
+-        //Edit add class hidden on header & formContent & remove show
+-        headerContent.classList.add('hidden');
+-        registerForm.classList.add('hidden');
+-        //Edit remove class hidden on info & add class show
+-        getData();
+-        loginInput.value = '';
+-        loginForm.classList.add('hidden');
+-        info.classList.remove('hidden');
+-      }
+     } else if (xhr.readyState == 4) {
+-      alert('error login');
++
+     }
+   }
+   return false;
+@@ -73,25 +42,21 @@
+ 
+ loginForm.addEventListener('submit', loginAjax);
+ 
+-function deconnexionAjax(event){
++//link logout
++function logout(event) {
+   event.preventDefault();
+   var xhr = new XMLHttpRequest();
+-  xhr.open('POST', 'controller/function/login&register.php?task=deconnexion');
++  xhr.open('POST', 'controller/function/login&register.php?task=');
+   var data = new FormData(this);
+   xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      console.log(this.responseText);
++  xhr.onreadystatechange = function () {
++    if (xhr.readyState == 4 && xhr.status == 200) {
+       var response = JSON.parse(this.response);
+-      if(response.sucDec == 1){
+-        headerContent.classList.remove('hidden');
+-        info.classList.add('hidden');
+-      }
+-    }else if (xhr.readyState ==4){
+-      alert('error deconnexion');
++    } else if (xhr.readyState == 4) {
++
+     }
+   }
+   return false;
+ }
+ 
+-deconnexion.addEventListener('submit',deconnexionAjax);
+\ No newline at end of file
++deconnexion.addEventListener('submit', logout);
+\ No newline at end of file
+Index: script2/information.js
+===================================================================
+diff --git a/script2/information.js b/script2/information.js
+--- a/script2/information.js	
++++ b/script2/information.js	
+@@ -1,147 +1,0 @@
+-//link declaration form
+-const tankDecForm = document.getElementById('tankDec');
+-const tankIncForm = document.getElementById('tankInc');
+-
+-const dpsDecForm = document.getElementById('dpsDec');
+-const dpsIncForm = document.getElementById('dpsInc');
+-
+-const healDecForm = document.getElementById('healDec');
+-const healIncForm = document.getElementById('healInc');
+-
+-const resetAllForm = document.getElementById('resetAll');
+-
+-//link function for form
+-//sublink tank dec form
+-function tankDec(event){
+-  event.preventDefault();
+-  var xhr = new XMLHttpRequest();
+-  var data = new FormData(this);
+-  xhr.open('POST','controller/function/updateData.php?task=tankDec');
+-  xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      var response = JSON.stringify(this.response);
+-      getData();
+-    }else if (xhr.readyState == 4){
+-      alert('error tank dec');
+-    }
+-  }
+-  return false;
+-}
+-//sublink tank inc form
+-function tankInc(event){
+-  event.preventDefault();
+-  var xhr = new XMLHttpRequest();
+-  var data = new FormData(this);
+-  xhr.open('POST','controller/function/updateData.php?task=tankInc');
+-  xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      var response = JSON.stringify(this.response);
+-      getData();
+-    }else if (xhr.readyState == 4){
+-      alert('error tank inc');
+-    }
+-  }
+-  return false;
+-}
+-
+-//sublink dps dec form
+-function dpsDec(event){
+-  event.preventDefault();
+-  var xhr = new XMLHttpRequest();
+-  var data = new FormData(this);
+-  xhr.open('POST','controller/function/updateData.php?task=dpsDec');
+-  xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      var response = JSON.stringify(this.response);
+-      getData();
+-    }else if (xhr.readyState == 4){
+-      alert('error dps dec');
+-    }
+-  }
+-  return false;
+-}
+-//sublink dps inc form
+-function dpsInc(event){
+-  event.preventDefault();
+-  var xhr = new XMLHttpRequest();
+-  var data = new FormData(this);
+-  xhr.open('POST','controller/function/updateData.php?task=dpsInc');
+-  xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      var response = JSON.stringify(this.response);
+-      getData();
+-    }else if (xhr.readyState == 4){
+-      alert('error dps inc');
+-    }
+-  }
+-  return false;
+-}
+-
+-//sublink heal dec form
+-function healDec(event){
+-  event.preventDefault();
+-  var xhr = new XMLHttpRequest();
+-  var data = new FormData(this);
+-  xhr.open('POST','controller/function/updateData.php?task=healDec');
+-  xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      var response = JSON.stringify(this.response);
+-      getData();
+-    }else if (xhr.readyState == 4){
+-      alert('error heal dec');
+-    }
+-  }
+-  return false;
+-}
+-//sublink heak inc form
+-function healInc(event){
+-  event.preventDefault();
+-  var xhr = new XMLHttpRequest();
+-  var data = new FormData(this);
+-  xhr.open('POST','controller/function/updateData.php?task=healInc');
+-  xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      var response = JSON.stringify(this.response);
+-      getData();
+-    }else if (xhr.readyState == 4){
+-      alert('error heal inc');
+-    }
+-  }
+-  return false;
+-}
+-
+-//sublink reset form
+-function resetAll(event){
+-  event.preventDefault();
+-  var xhr = new XMLHttpRequest();
+-  var data = new FormData(this);
+-  xhr.open('POST','controller/function/updateData.php?task=resetAll');
+-  xhr.send(data);
+-  xhr.onreadystatechange = function(){
+-    if (xhr.readyState == 4 && xhr.status == 200){
+-      var response = JSON.stringify(this.response);
+-      getData();
+-    }else if (xhr.readyState == 4){
+-      alert('error reset');
+-    }
+-  }
+-  return false;
+-}
+-
+-// link event for form
+-tankDecForm.addEventListener('submit',tankDec);
+-tankIncForm.addEventListener('submit',tankInc);
+-
+-dpsDecForm.addEventListener('submit',dpsDec);
+-dpsIncForm.addEventListener('submit',dpsInc);
+-
+-healDecForm.addEventListener('submit',healDec);
+-healIncForm.addEventListener('submit',healInc);
+-
+-resetAllForm.addEventListener('submit',resetAll);
+\ No newline at end of file
+Index: script2/show&hidden.js
+===================================================================
+diff --git a/script2/show&hidden.js b/script2/show&hidden.js
+--- a/script2/show&hidden.js	
++++ b/script2/show&hidden.js	
+@@ -1,65 +1,131 @@
++//link affect class
+ responseContent.classList.add('hidden');
+ resetPopup.classList.add('hidden');
+ info.classList.add('hidden');
+ loginForm.classList.add('hidden');
+ registerForm.classList.add('hidden');
+ 
++//link function response
++//anchor show
++function showResponse() {
++  if (responseContent.classList.contains('hidden')) {
++    responseContent.classList.remove('hidden');
++    responseContent.classList.add('success');
++  }
++}
++
++// anchor hidden
++function hiddenResponse() {
++  if (!responseContent.classList.contains('hidden')) {
++    responseContent.classList.add('hidden');
++  }
++}
++
++//link function login
++//anchor show
+ function showLogin() {
+   if (loginForm.classList.contains('hidden')) {
+     loginForm.classList.remove('hidden');
+   }
+ }
+ 
++// anchor hidden
++function hiddenLogin() {
++  if (!loginForm.classList.contains('hidden')) {
++    loginForm.classList.add('hidden');
++  }
++}
++
++//link function register
++//anchor show
+ function showRegister() {
+   if (registerForm.classList.contains('hidden')) {
+     registerForm.classList.remove('hidden');
+   }
+ }
+ 
+-function closeLogin() {
+-  if (!loginForm.classList.contains('hidden')) {
+-    loginForm.classList.add('hidden');
+-  }
+-}
+-
+-function closeRegister() {
++//anchor hidden
++function hiddenRegister() {
+   if (!registerForm.classList.contains('hidden')) {
+     registerForm.classList.add('hidden');
+   }
+ }
+ 
+-function showResponse(){
+-  if(responseContent.classList.contains('hidden')){
+-    responseContent.classList.add('hidden');
++//anchor success
++function successRegister(){
++  showResponse();
++  responseContent.classList.add('error');
++  responseContent.classList.remove('success');
++  responseForm.innerHTML = 'Pseudo déjà existant';
++}
++//anchor error
++function errorRegister(){
++  showResponse();
++  registerInput.value = "";
++  hiddenRegister();
++  responseContent.classList.add('success');
++  responseContent.classList.remove('error');
++  responseForm.innerHTML = 'Pseudo Ajouter avec success';
++}
++//link function header
++//anchor show
++function showHeader() {
++  if (headerContent.classList.contains('hidden')) {
++    headerContent.classList.remove('hidden');
++  }
++}
++
++// anchor hidden
++function hiddenHeader() {
++  if (!headerContent.classList.contains('hidden')) {
++    headerContent.classList.add('hidden');
++  }
++}
++
++//link function info
++//anchor show
++function showInfo() {
++  if (info.classList.contains('hidden')) {
++    info.classList.remove('hidden');
+   }
+ }
+ 
+-function closeResponse() {
+-  if (!responseContent.classList.contains('hidden')) {
+-    responseContent.classList.remove('hidden');
++// anchor hidden
++function hiddenInfo() {
++  if (!info.classList.contains('hidden')) {
++    info.classList.add('hidden');
+   }
+ }
+ 
+-function showPopup(){
+-  if(resetPopup.classList.contains('hidden')){
++//link function popup
++//anchor show
++function showPopup() {
++  if (resetPopup.classList.contains('hidden')) {
+     resetPopup.classList.remove('hidden');
+   }
+ }
+ 
+-function closePopup(){
+-  if(!resetPopup.classList.contains('hidden')){
++// anchor hidden
++function hiddenPopup() {
++  if (!resetPopup.classList.contains('hidden')) {
+     resetPopup.classList.add('hidden');
+   }
+ }
+ 
++// link affect function
++// anchor response
++closeResponseBtn.addEventListener('click', hiddenResponse);
+ 
+-showLoginBtn.addEventListener('click',showLogin);
+-closeLoginBtn.addEventListener('click',closeLogin);
++// anchor login
++showLoginBtn.addEventListener('click', showLogin);
++closeLoginBtn.addEventListener('click', hiddenLogin);
+ 
+-showRegisterBtn.addEventListener('click',showRegister);
+-closeRegisterBtn.addEventListener('click',closeRegister);
++// anchor register
++showRegisterBtn.addEventListener('click', showRegister);
++closeRegisterBtn.addEventListener('click', hiddenRegister);
+ 
+-closeResponseBtn.addEventListener('click',closeResponse);
+-
++// anchor popup
+ resetBtn.addEventListener('click',showPopup);
+-cancelBtn.addEventListener('click',closePopup);
+\ No newline at end of file
++cancelBtn.addEventListener('click', hiddenPopup);
++
++showResponse();
+\ No newline at end of file
