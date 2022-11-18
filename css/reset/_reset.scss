@@ -8,6 +8,8 @@
 
 button{
   background: none;
+  box-shadow:none;
+  border: none;
 }
 
 input[type="text"]{
@@ -21,7 +23,6 @@ fieldset{
 }
 
 body{
-  background: #000;
   color: #fff;
   position:relative;
 }

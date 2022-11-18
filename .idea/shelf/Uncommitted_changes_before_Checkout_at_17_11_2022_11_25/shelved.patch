@@ -1,0 +1,28 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	
++++ b/index.html	
+@@ -283,12 +283,12 @@
+ </main>
+ 
+ <footer>
+-	<script src="script2/declaration.js"></script>
+-	<script src="script2/show&hidden.js"></script>
+-	<script src="script2/getData.js"></script>
+-	<script src="script2/testCookie.js"></script>
+-	<script src="script2/login&register-ajax.js"></script>
+-	<script src="script2/information.js"></script>
++	<script src="script/declaration.js"></script>
++	<script src="script/show&hidden.js"></script>
++	<script src="script/getData.js"></script>
++	<script src="script/testCookie.js"></script>
++	<script src="script/login&register-ajax.js"></script>
++	<script src="script/information.js"></script>
+ </footer>
+ </body>
+ </html>
+\ No newline at end of file

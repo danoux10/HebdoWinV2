@@ -58,6 +58,7 @@ function loginAjax(event) {
         loginInput.value = '';
         loginForm.classList.add('hidden');
         info.classList.remove('hidden');
+        closeResponse();
       }
     } else if (xhr.readyState == 4) {
       alert('error login');

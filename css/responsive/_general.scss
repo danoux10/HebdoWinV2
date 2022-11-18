@@ -106,7 +106,7 @@
   transform: translate(-50%, -50%);
   top: 50vh;
   left: 50vw;
-  width: 22rem;
+  width: 23rem;
   height: 11rem;
   transition: height, width ease .5s;
 
@@ -169,6 +169,7 @@
   width: 99%;
   transform:none;
   transition:scale ease .5s;
+  z-index:1;
   &.hidden{
     width:0;
     height:0;
@@ -191,9 +192,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     height: 30rem;
-    margin-top: 15rem;
     transform: none;
     transition: all ease .5s;
 
@@ -216,7 +215,6 @@
       flex-direction: row;
       justify-content: space-around;
       width: 99%;
-      height: 20rem;
       //subanchor role
       .role {
         display: flex;
@@ -231,8 +229,6 @@
           padding: 1rem;
           border: 2px solid;
           border-radius: 50px;
-          width: 1.5rem;
-          height: 1.5rem;
 
           svg {
             width: 2rem;
@@ -270,18 +266,13 @@
         //anchorlink fieldset
         fieldset {
           border-radius: 10px;
-          width: 15rem;
-          height: 10rem;
           display: flex;
           justify-content: space-around;
           position: relative;
-          @include background;
-
+          background: $dark;
           &::before {
             content: '';
             position: absolute;
-            width: 15.4rem;
-            height: 10.7rem;
             z-index: -1;
             top: -.3rem;
             border-radius: 10px;
@@ -409,7 +400,6 @@
             justify-content: space-around;
             align-items: center;
             position: absolute;
-            top: 3.5rem;
 
             h3 {
               font-weight: bold;
@@ -422,7 +412,6 @@
     //anchor confirm popup
     #confirm-popup {
       position: absolute;
-      top: 65%;
       border-radius: 10px;
       @include background;
       border: 1px solid;
