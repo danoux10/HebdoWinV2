@@ -16,6 +16,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="14a48bb2-1271-46c4-899d-4d7194fdeded" name="nas" url="http://109.17.151.168">
+        <fileTransfer rootFolder="/web/hebdoWin" host="109.17.151.168" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
